@@ -2,4 +2,6 @@
 
 ##agency 
 
-*Get Data From the 
+*Get Data From the customer
+
+*Build Website
