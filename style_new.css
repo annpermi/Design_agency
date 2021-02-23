@@ -12,8 +12,11 @@ body {
   line-height: 1.5;
 }
 
+.wrapper {
+  width: 70%;
+  margin: auto;
+}
 img {
-  display: block;
   width: 100%;
   height: auto;
 }
@@ -36,28 +39,31 @@ h3 {
 #showcase {
   position: relative;
   background: url("https://static.pexels.com/photos/248515/pexels-photo-248515.png");
-  width: 100%;
+
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: 600px;
+  height: 500px;
   z-index: -1;
-}
-.overlay {
-  position: absolute;
-  height: 600px;
-  width: 100%;
-  background: #333;
-  opacity: 0.7;
-}
-
-.container {
-  position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 6em 2em 3em 2em;
+}
+.overlay {
+  position: absolute;
+  height: 500px;
+  width: 100%;
+  background: #333;
+  opacity: 0.7;
+}
+#showcase h1 {
+  padding-top: 50px;
+  padding-bottom: 0;
+}
+.container {
+  position: absolute;
+  padding: 2em 2em 3em 2em;
   color: white;
 }
 
@@ -65,7 +71,7 @@ h3 {
   background-color: #333;
   color: white;
   text-decoration: none;
-  padding: 1em 2em;
+  padding: 1em 1.5em;
   border: solid 1px #666;
   display: inline-block;
   margin: 0.5em 0;
@@ -80,16 +86,23 @@ h3 {
 #section-a {
   background-color: #eaeaea;
 }
+#section-a p {
+  columns: 2;
+}
 /* section-b  */
 #section-b {
   background-color: #333;
-  display: grid;
-  grid-template-columns: 1fr;
   padding: 1em 0.5em;
+}
+.grid {
+  display: flex;
+  justify-content: space-around;
+  width: 70%;
+  margin: auto;
 }
 .box {
   background-color: #fff;
-  margin: 0.5em;
+  width: 31%;
 }
 
 /* section-c */
@@ -97,6 +110,14 @@ h3 {
 }
 
 /* section-d */
+#section-d {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 1fr;
+}
+#section-d .content {
+  justify-content: start;
+}
 #section-d .left {
   background-color: rgb(25, 157, 238);
   color: white;
@@ -119,20 +140,28 @@ footer a {
 }
 
 /* Media Queries*/
-@media (min-width: 700px) {
+@media (max-width: 768px) {
+  /* Global */
+  #showcase .wrapper,
+  #section-a .wrapper,
+  #section-c .wrapper {
+    width: 100%;
+  }
   /* Header */
-  .container {
-  }
   #section-a p {
-    columns: 2;
+    columns: 1;
   }
-  #section-b {
-    grid-template-columns: 1fr 1fr 1fr;
+  #section-b .grid {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .box {
+    width: 100%;
+    margin: 0.5em;
   }
   #section-d {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-auto-rows: 1fr;
+    grid-template-columns: 1fr;
   }
   #section-d .content {
     justify-content: start;
